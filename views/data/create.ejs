@@ -1,0 +1,23 @@
+<% title='Add' %>
+<h1>Add Weight</h1>
+<% if (error) { %>
+<div style="color: red">
+  <p>Error(s):</p>
+
+  <div>
+    <% if (error) { %>
+    <p><%= error %></p>
+    <% } %>
+  </div>
+  <% if (alertScript) { %> <%- alertScript %> <% } %>
+</div>
+<% } %>
+<form action="create" method="post">
+  <label for="weight">Weight:</label>
+  <input type="number" id="weight" name="weight" required /><br />
+  <input
+    class="btn btn-outline-dark btn-success text-white"
+    type="submit"
+    value="Add weight"
+  />
+</form>

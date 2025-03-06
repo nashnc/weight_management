@@ -1,0 +1,29 @@
+<% title='Result' %>
+
+<h1>The Diffrence</h1>
+
+<% if (error) { %>
+<div style="color: red">
+  <p>Error(s):</p>
+  <ul>
+    <% Object.values(error).forEach(err => { %>
+    <li><%= err.message %></li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+
+<p class="h4"><%= result%></p>
+<p class="h4"><%= warning%></p>
+<div class="row justify-content-between">
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-outline-dark btn-primary text-white" href="/">Home</a>
+    </div>
+    <div class="col">
+      <a class="btn btn-outline-dark btn-primary text-white" href="/datas/list"
+        >Data List</a
+      >
+    </div>
+  </div>
+</div>

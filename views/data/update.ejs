@@ -1,0 +1,29 @@
+<% title='Update entry' %>
+<h1>Update Product</h1>
+
+<% if (error) { %>
+<div style="color: red">
+  <p>Error(s):</p>
+  <ul>
+    <% Object.values(error).forEach(err => { %>
+    <li><%= err.message %></li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+
+<form action="/datas/update/<%= data._id %>" method="post">
+  <label for="weight">Weight:</label>
+  <input
+    type="number"
+    id="weight"
+    name="weight"
+    value="<%= data.weight %>"
+  /><br />
+  <button
+    class="btn btn-outline-dark btn-warning text-dark-subtle"
+    type="submit"
+  >
+    Update entry
+  </button>
+</form>

@@ -1,0 +1,30 @@
+<% title='Calculate' %>
+
+<h1>Calculate Weight difference</h1>
+
+<% if (error) { %>
+<div style="color: red">
+  <p>Error(s):</p>
+  <ul>
+    <% Object.values(error).forEach(err => { %>
+    <li><%= err.message %></li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+
+<div class="col-3">
+  <form class="container mt-4" action="/datas/cal" method="post">
+    <div class="mb-3">
+      <label for="datefirst" class="form-label">First Date</label>
+      <input type="date" name="datefirst" id="datefirst" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="datenext" class="form-label">Second Date</label>
+      <input type="date" name="datenext" id="datenext" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calculate</button>
+  </form>
+</div>

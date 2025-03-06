@@ -1,0 +1,18 @@
+<% title='Delete Confirmation' %>
+
+<h1>Delete Confirmation</h1>
+<p>Are you sure you want to delete the entry below?</p>
+
+<p>Weight: <%= data.weight %></p>
+<p>Description: <%= data.date %></p>
+
+<form action="/datas/delete/<%= data._id %>" method="post">
+  <button 
+    class="btn btn-outline-dark btn-danger text-white"
+  
+  type="submit">Yes, Delete</button>
+  <a 
+    class="btn btn-outline-dark btn-warning text-dark-subtle"
+  
+  href="/datas/list">No, Cancel</a>
+</form>

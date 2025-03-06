@@ -1,0 +1,55 @@
+<% title='Weight List' %>
+
+<div class="container">
+  <h1 class="text-success">Weight List</h1>
+
+  <% if (data.length > 0) { %>
+  <table class="table table-bordered table-responsive-sm">
+    <thead>
+      <tr class="table-dark table-bordered border-info-subtle">
+        <th>Weight</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th colspan="3">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(data => { %>
+      <tr>
+        <td><%= data.weight %></td>
+        <td><%= data.date.toDateString() %></td>
+        <td><%= data.time.toLocaleTimeString() %></td>
+        <td>
+          <a href="update/<%= data._id %>" class="btn btn-warning btn-sm" value="edit" type="submit">Edit</a>
+        </td>
+        <td>
+          <a href="delete/<%= data._id %>" class="btn btn-danger btn-sm" value="delete" type="submit">Delete</a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <p>No Entries found.</p>
+  <% } %>
+</div>
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center" style="margin-top: 20px;">
+  <% if (pagination.hasPrevPage) { %>
+    <a href="?page=1" class="btn btn-secondary btn-sm mr-2">&laquo; First</a>
+    <a href="?page=<%= pagination.prevPage %>" class="btn btn-secondary btn-sm mr-2">&laquo; Previous</a>
+  <% } %>
+  
+  <% for (let page_number = 1; page_number <= pagination.totalPages; page_number++) { %>
+    <% if (pagination.page === page_number) { %>
+      <span class="btn btn-info btn-sm disabled"><%= page_number %></span>
+    <% } else { %>
+      <a href="?page=<%= page_number %>" class="btn btn-light btn-sm mr-2"><%= page_number %></a>
+    <% } %>
+  <% } %>
+
+  <% if (pagination.hasNextPage) { %>
+    <a href="?page=<%= pagination.nextPage %>" class="btn btn-secondary btn-sm ml-2">Next &raquo;</a>
+    <a href="?page=<%= pagination.totalPages %>" class="btn btn-secondary btn-sm ml-2">Last &raquo;</a>
+  <% } %>
+</nav>

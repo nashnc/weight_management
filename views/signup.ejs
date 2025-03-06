@@ -1,0 +1,62 @@
+<% title='Signup' %> <% if (message) { %>
+<div style="color: red">
+  <ul>
+    <li><%= message %></li>
+  </ul>
+</div>
+<% } %> <% if (error) { %>
+<div style="color: red">
+  <ul>
+    <% Object.values(error).forEach(err => { %>
+    <li><%= err.message %></li>
+    <% }); %>
+  </ul>
+</div>
+<% } %>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-3">
+    <h2 class="my-4 d-flex justify-content-around">Sign Up</h2>
+
+    <form action="/signup" method="post" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        />
+        <div class="invalid-feedback">Please enter a password.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+        <div class="invalid-feedback">Please confirm your password.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+  </div>
+  <div class="col-3"></div>
+</div>
