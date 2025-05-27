@@ -1,3 +1,5 @@
+
+```markdown
 <div align="center">
 
 [![Awesome](https://img.shields.io/badge/Awesome-Profile-blueviolet?logo=github)](https://github.com/nashnc/portfolio)
@@ -63,3 +65,73 @@ Deployment coming soon!
 Clone this repository:
 ```sh
 git clone https://github.com/nashnc/weight_management.git
+cd weight_management
+```
+
+Install dependencies:
+```sh
+npm install
+```
+
+Set up your environment variables in a `.env` file (see `.env.example` if provided):
+
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=3000
+SECRET=your_session_secret
+```
+
+Start the application:
+```sh
+npm start
+```
+
+Visit `http://localhost:3000` in your browser.
+
+---
+
+## 📂 Project Structure
+
+```
+weight_management/
+├── models/           # Mongoose models (e.g., User, WeightEntry)
+├── routes/           # Express route handlers
+├── views/            # EJS templates
+├── public/           # Static assets (CSS, JS, images)
+├── app.js            # Main application entry point
+├── package.json
+└── README.md
+```
+
+---
+
+## 📋 API Endpoints
+
+| Method | Endpoint         | Description                      |
+|--------|------------------|----------------------------------|
+| POST   | `/register`      | Register new user                |
+| POST   | `/login`         | Login user                       |
+| GET    | `/weights`       | Get all weight entries           |
+| POST   | `/weights`       | Add a new weight entry           |
+| PUT    | `/weights/:id`   | Update a weight entry            |
+| DELETE | `/weights/:id`   | Delete a weight entry            |
+
+---
+
+## 🙋‍♂️ Contributing
+
+Contributions are welcome! Please open issues or create pull requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📬 Contact
+
+For questions or feedback, please reach out via [GitHub Issues](https://github.com/nashnc/weight_management/issues) or contact [@nashnc](https://github.com/nashnc).
+
+```
