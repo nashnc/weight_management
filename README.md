@@ -1,5 +1,4 @@
 
-```markdown
 <div align="center">
 
 [![Awesome](https://img.shields.io/badge/Awesome-Profile-blueviolet?logo=github)](https://github.com/nashnc/portfolio)
